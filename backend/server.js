@@ -54,7 +54,7 @@ app.listen(PORT, () => {
 });*/
 
 
-
+//my current server.js
 import path from 'path'; // Node.js module to work with file/directory paths
 import express from 'express'; // Express framework for creating the server
 import cors from 'cors'; // Middleware to allow cross-origin requests
@@ -67,7 +67,7 @@ import authRoutes from './routes/authRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
-import stripeRoutes from './routes/stripeRoutes.js';
+//import stripeRoutes from './routes/stripeRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 //import orderSimpleRoutes from './routes/orderSimpleRoutes.js';
 
@@ -89,11 +89,11 @@ app.use('/api/orders', orderRoutes); // Order management routes
 //app.use('/api/orders/simple', orderSimpleRoutes); // optional simpler order route
 app.use('/api/products', productRoutes); // CRUD products
 app.use('/api/stripe', paymentRoutes); // Stripe payment intent route
-app.use('/api/stripe', stripeRoutes); // Stripe webhook route
+//app.use('/api/stripe', stripeRoutes); // Stripe webhook route
 
 // Serve images statically from backend/images
 const __dirname = path.resolve(); 
-app.use('/images', express.static(path.join(__dirname, '/backend/images'))); // Allow access to images via /images/<filename>
+app.use('/images', express.static(path.join(__dirname, 'images'))); // Allow access to images via /images/<filename>
 
 // ✅ Root route
 app.get('/', (req, res) => {

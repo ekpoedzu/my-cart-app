@@ -6,7 +6,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const router = express.Router();
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+//const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+let stripe;
+if (process.env.STRIPE_SECRET_KEY) {
+  stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+}
+
 
 router.post('/create-payment-intent', async (req, res) => {
   try {
