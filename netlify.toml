@@ -1,6 +1,6 @@
 [build]
   base = "frontend"         # Base directory where npm install & build runs
-  publish = "dist"          # Directory to publish (frontend/dist)
+  publish = "frontend/dist"          # Directory to publish (frontend/dist)
   command = "npm run build" # Build command
 
 # If you have no Netlify functions, just omit [functions]
