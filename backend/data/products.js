@@ -1,6 +1,6 @@
 //My current  backend/data/products.js
 
-const products = [
+/*const products = [
   {
     name: 'TShirt',
     price: 25,
@@ -56,6 +56,97 @@ const products = [
     category: 'Handmade',
     stock: 10,
     image: '/images/bracelet.jpg',
+  },
+];
+
+export default products;*/
+
+
+
+const products = [
+  {
+    name: 'T-Shirt',
+    price: 25,
+    description: 'A high-quality cotton T-shirt for everyday wear.',
+    category: 'Clothing',
+    stock: 10,
+    image: '/images/tshirt.jpg',
+    brand: 'Generic',
+    rating: 4.5,
+    numReviews: 10,
+    isFeatured: true,
+  },
+  {
+    name: 'Classic Watch',
+    price: 40,
+    description: 'Stylish wristwatch with leather strap and quartz movement.',
+    category: 'Accessories',
+    stock: 5,
+    image: '/images/watch.jpg',
+    brand: 'Timely',
+    rating: 4.8,
+    numReviews: 22,
+    isFeatured: true,
+  },
+  {
+    name: 'Wireless Headphones',
+    price: 15,
+    description: 'Affordable and reliable wireless headphones with long battery life.',
+    category: 'Electronics',
+    stock: 0,
+    image: '/images/headphones.jpg',
+    brand: 'SoundMax',
+    rating: 4.2,
+    numReviews: 8,
+    isFeatured: false,
+  },
+  {
+    name: 'Organic Honey Jar',
+    price: 15,
+    description: 'Raw unfiltered organic honey, packed with natural sweetness.',
+    category: 'Food',
+    stock: 4,
+    image: '/images/honey.jpg',
+    brand: 'NaturePure',
+    rating: 4.7,
+    numReviews: 15,
+    isFeatured: true,
+  },
+  {
+    name: 'Organic Gari',
+    price: 15,
+    description: 'Delicious, crispy, sun-dried organic gari — straight from the source.',
+    category: 'Food',
+    stock: 10,
+    image: '/images/gari.jpg',
+    brand: 'EcoFoods',
+    rating: 4.3,
+    numReviews: 11,
+    isFeatured: false,
+  },
+  {
+    name: 'Unique Scarf',
+    price: 15,
+    description: 'Elegant handmade scarf with vibrant patterns.',
+    category: 'Clothing',
+    stock: 10,
+    image: '/images/scarf.jpg',
+    brand: 'StyleCraft',
+    rating: 4.6,
+    numReviews: 17,
+    isFeatured: true,
+  },
+  {
+    name: 'Beaded Bracelet',
+    price: 15,
+    description: 'Gostic handmade unique bracelet collection with colorful beads.',
+    category: 'Handmade',
+    stock: 10,
+    image: '/images/bracelet.jpg',
+    brand: 'Gostic',
+    rating: 4.9,
+    numReviews: 25,
+    isFeatured: true,
   },
 ];
 

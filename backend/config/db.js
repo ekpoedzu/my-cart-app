@@ -1,120 +1,15 @@
-// backend/config/db.js
-/*import mongoose from 'mongoose';
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    console.log(`✅ MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error('❌ MongoDB connection failed:', error.message);
-    process.exit(1);
-  }
-};
-
-export default connectDB;*/
-
-
-/*import mongoose from 'mongoose';
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1);
-  }
-};
-
-export default connectDB;*/
-
-
-
-/*import mongoose from 'mongoose';
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1);
-  }
-};
-
-export default connectDB;*/
-
-//config/db.js from atlas
-/*import mongoose from 'mongoose';
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1);
-  }
-};
-
-export default connectDB;*/
-
-
-//From local mongo
-
-/*import mongoose from 'mongoose';
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`❌ MongoDB Connection Error: ${error.message}`);
-    process.exit(1);
-  }
-};
-
-export default connectDB;*/
-
-
-/*import mongoose from 'mongoose';
-
-const mongoURI = 'mongodb://127.0.0.1:27017/mycartdb';
-
-const connectDB = async () => {
-  try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log('✅ MongoDB connected to mycartdb');
-  } catch (error) {
-    console.error('❌ MongoDB connection error:', error);
-    process.exit(1);
-  }
-};
-
-export default connectDB;*/
-
-
-// config/db.js
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const mongoURI = 'mongodb+srv://mycartuser:mycartuser123@cluster0.eulofvv.mongodb.net/mycartdb?retryWrites=true&w=majority';
+dotenv.config(); // make sure this is at the top
+
+
+const mongoURI = process.env.MONGO_URI;// Use env variable
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongoURI);
     console.log('✅ MongoDB connected to mycartdb (Atlas)');
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
@@ -123,6 +18,7 @@ const connectDB = async () => {
 };
 
 export default connectDB;
+
 
 
 
