@@ -1,8 +1,28 @@
-# Ignore backend environment file
-backend/.env
+# ======================
+# Node / General
+# ======================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Ignore frontend environment file
+# ======================
+# Frontend (Vite + React)
+# ======================
+frontend/node_modules/
+frontend/dist/
 frontend/.env
 
-# Node modules
-node_modules/
+# ======================
+# Backend
+# ======================
+backend/node_modules/
+backend/.env
+
+# ======================
+# OS / Editor junk
+# ======================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
