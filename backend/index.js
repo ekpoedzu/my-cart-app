@@ -53,7 +53,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-      'https:/zirayco.com.netlify.app'
+       'https://resplendent-otter-5eda31.netlify.app'
     ],
     credentials: true,
   })
