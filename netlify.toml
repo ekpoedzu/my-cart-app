@@ -1,6 +1,15 @@
 [build]
-  base = "frontend"         # Base directory where npm install & build runs
-  publish = "dist"          # Directory to publish (frontend/dist)
-  command = "npm run build" # Build command
+  base = "frontend"             # Base directory where npm install & build runs 
+  publish = "dist"              # Directory to publish (frontend/dist)
+  command = "npm run build"     # Build command
 
-# If you have no Netlify functions, just omit [functions]
+[[redirects]]
+  from = "/api/*"
+  to = "https://my-cart-app-0n8d.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
