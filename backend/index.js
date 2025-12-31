@@ -41,8 +41,8 @@ app.listen(PORT, () => {
 });*/
 
 
-//My server.js
-const express = require('express');
+//My index.js
+/*const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -53,7 +53,8 @@ app.use(
   cors({
     origin: [
       'http://localhost:5173',
-       'https://resplendent-otter-5eda31.netlify.app'
+       //'https://resplendent-otter-5eda31.netlify.app'
+       'https://peppy-llama-a9dbc7.netlify.app/'
     ],
     credentials: true,
   })
@@ -75,6 +76,44 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});*/
+
+
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://resplendent-otter-5eda31.netlify.app',
+  'https://peppy-llama-a9dbc7.netlify.app',
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  })
+);
+
+app.use(express.json());
+
+// routes
+const stripeRoutes = require('./routes/stripe');
+app.use('/api/stripe', stripeRoutes);
+
+app.get('/', (req, res) => {
+  res.send('API is running...');
 });
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 

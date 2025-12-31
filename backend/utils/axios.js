@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';
 
 const axiosInstance = axios.create({
   baseURL: '/api',
@@ -16,7 +16,29 @@ axiosInstance.interceptors.request.use((config) => {
 );
 
 
+export default axiosInstance;*/
+
+
+
+import axios from "axios";
+
+const baseURL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : "/api"; // fallback for local dev proxy
+
+const axiosInstance = axios.create({ baseURL });
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user?.token) config.headers.Authorization = `Bearer ${user.token}`;
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
 export default axiosInstance;
+
 
 
 
