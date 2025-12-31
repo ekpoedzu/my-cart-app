@@ -15,7 +15,7 @@ import { protect, adminOnly } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.delete('/products/:id', protect, adminOnly);
+//router.delete('/products/:id', protect, adminOnly);
 // Auth routes
 router.post('/register', registerUser);
 router.post('/login', loginUser);

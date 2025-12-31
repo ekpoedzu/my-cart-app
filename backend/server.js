@@ -39,6 +39,8 @@ app.use('/api/stripe', paymentRoutes); // Stripe payment intent route
 // Serve images statically from backend/images
 const __dirname = path.resolve(); 
 app.use('/images', express.static(path.join(__dirname, 'images'))); // Allow access to images via /images/<filename>
+//const __dirname = path.resolve();
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // ✅ Root route
 app.get('/', (req, res) => {
