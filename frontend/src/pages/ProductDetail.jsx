@@ -605,11 +605,9 @@ const ProductDetail = () => {
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Product Image */}
-        <img
-          src={product.image?.startsWith('http') ? product.image : `/images/${product.image}`}
-          alt={product.name}
-          className="w-full md:w-1/2 h-auto object-cover rounded"
-        />
+      
+        <img src={product.image || '/images/placeholder.jpg'} alt={product.name} style={{ width: 300 }} />
+          
 
         {/* Product Info */}
         <div className="md:w-1/2 flex flex-col gap-3">
