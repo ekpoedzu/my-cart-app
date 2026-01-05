@@ -1,349 +1,52 @@
-// Home.jsx
-/*const Home = () => <h2>Home Page</h2>;
-export default Home;*/
-
-/*import React from 'react';
-import { useCart } from '../context/CartProvider';
-
-const Home = () => {
-  const { addToCart } = useCart();
-
-  const sampleProduct = {
-    _id: 'prod-1',
-    name: 'Sample Product',
-    price: 20,
-  };
-
-  return (
-    <div>
-      <h2>Home</h2>
-      <p>{sampleProduct.name} — ${sampleProduct.price}</p>
-      <button onClick={() => addToCart(sampleProduct)}>Add to Cart</button>
-    </div>
-  );
-};
-
-export default Home;*/
-
-
-/*import React from 'react';
-import { useCart } from '../context/CartProvider';
-import { Link } from 'react-router-dom';
-
-const Home = () => {
-  const { addToCart } = useCart();
-
-  const sampleProduct = {
-    _id: 'prod-1',
-    name: 'Sample Product',
-    price: 20,
-  };
-
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h2>Welcome to My Store</h2>
-      <p>Browse our <Link to="/products">Products</Link> and add them to your cart.</p>
-
-      <hr />
-
-      <h3>Quick Add Sample Product</h3>
-      <p>{sampleProduct.name} — ${sampleProduct.price}</p>
-      <button onClick={() => addToCart(sampleProduct)}>Add to Cart</button>
-    </div>
-  );
-};
-
-export default Home;*/
-
-
-/*import React from 'react';
-import { useCart } from '../context/CartProvider';
-import { Link } from 'react-router-dom';
-
-const Home = () => {
-  const { addToCart } = useCart();
-
-  const sampleProduct = {
-    _id: 'prod-1',
-    name: 'Sample Product',
-    price: 20,
-  };
-
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h2>Welcome to My Store</h2>
-      <p>
-        Browse our <Link to="/products">Products</Link> and add them to your cart.
-      </p>
-
-      <hr />
-
-      <h3>Quick Add Sample Product</h3>
-      <p>{sampleProduct.name} — ${sampleProduct.price}</p>
-      <button onClick={() => addToCart(sampleProduct)}>Add to Cart</button>
-    </div>
-  );
-};
-
-export default Home;*/
-
-
-/*import React, { useState } from 'react';
-import ProductList from './ProductList';
-
-const Home = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Welcome to My Store</h1>
-      <p>Browse our Products and add them to your cart.</p>
-
-      
-      <input
-        type="text"
-        placeholder="Search products..."
-        value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
-        style={{
-          margin: '1rem 0',
-          padding: '0.5rem',
-          width: '100%',
-          maxWidth: '400px',
-          borderRadius: '4px',
-          border: '1px solid #ccc',
-        }}
-      />
-
-    
-      <ProductList searchTerm={searchTerm} />
-    </div>
-  );
-};
-
-export default Home;*/
-
-
-
-/*import React from 'react';
-import ProductList from './ProductList';
-import { useOutletContext } from 'react-router-dom';
-
-const Home = () => {
-  const { searchTerm } = useOutletContext();
-
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Welcome to My Store</h1>
-      <p>Browse our Products and add them to your cart.</p>
-
-      
-      <ProductList searchTerm={searchTerm} />
-    </div>
-  );
-};
-
-export default Home;*/
-
-
-/*import React, { useState } from 'react';
-import ProductList from './ProductList';
-
-const Home = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Welcome to My Store</h1>
-      <p>Browse our Products and add them to your cart.</p>
-
-      // Search bar 
-      <input
-        type="text"
-        placeholder="Search products..."
-        value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
-        style={{
-          margin: '1rem 0',
-          padding: '0.5rem',
-          width: '100%',
-          maxWidth: '400px',
-          borderRadius: '4px',
-          border: '1px solid #ccc',
-        }}
-      />
-
-      // Pass searchTerm to ProductList 
-      <ProductList searchTerm={searchTerm} />
-    </div>
-  );
-};
-
-export default Home; // ✅ This is essential*/
-
-
-
-/*import React from 'react';
-
-const Home = () => {
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Welcome to My Store</h1>
-      <p>Browse our products and add them to your cart.</p>
-    </div>
-  );
-};
-
-export default Home;*/
-
-
-// src/pages/Home.jsx
-/*import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-const sampleProducts = [
- 
- {
-    _id: 'prod-4',
-    name: 'Organic Honey Jarey',
-    price: 15,
-    description: 'Raw unfiltered organic honey.',
-    category: 'Food',
-    stock: 4,
-    image: '/images/honey.jpg',
-  },
-  {
-    _id: 'prod-5',
-    name: 'Organic Gari',
-    price: 15,
-    description: 'Delicious crispy gari.',
-    category: 'Food',
-    stock: 10,
-    image: '/images/gari.jpg',
-  },
-  {
-    _id: 'prod-6',
-    name: 'Unique Scarf',
-    price: 15,
-    description: 'Elegant unique scarf.',
-    category: 'Clothing',
-    stock: 10,
-    image: '/images/scarf.jpg',
-  },
-  {
-    _id: 'prod-7',
-    name: 'Breaded Bracelet',
-    price: 15,
-    description: 'GosticHandmade unique collection.',
-    category: 'Handmade',
-    stock: 10,
-    image: '/images/bracelet.jpg',
-  },
-];
-
-
-const Home = () => {
-  return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Welcome to Our Store</h1>
-      <div style={styles.grid}>
-        {sampleProducts.map((product) => (
-  <div key={product._id} style={styles.card}>
-    <img src={product.image} alt={product.name} style={styles.image} />
-    <h3>{product.name}</h3>
-    <p>${product.price.toFixed(2)}</p>
-    <button style={styles.button}>View Product</button>
-  </div>
-))}
-
-
-
-
-      </div>
-    </div>
-  );
-};
-
-const styles = {
-  container: {
-    padding: '2rem',
-    textAlign: 'center',
-  },
-  heading: {
-    marginBottom: '2rem',
-    fontSize: '2rem',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    gap: '1.5rem',
-  },
-  card: {
-    border: '1px solid #ddd',
-    borderRadius: '10px',
-    padding: '1rem',
-    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-  },
-  image: {
-    width: '100%',
-    height: '150px',
-    objectFit: 'cover',
-    borderRadius: '8px',
-  },
-  button: {
-    marginTop: '1rem',
-    padding: '0.5rem 1rem',
-    background: '#0070f3',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
-};
-
-export default Home;*/
-
-
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
+/*import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const sampleProducts = [
   {
-    _id: 'prod-4',
-    name: 'Organic Honey Jarey',
+    _id: "prod-4",
+    name: "Organic Honey Jarey",
     price: 15,
-    description: 'Raw unfiltered organic honey.',
-    category: 'Food',
+    description: "Raw unfiltered organic honey.",
+    category: "Food",
     stock: 4,
-    image: '/images/honey.jpg',
+    image: "/images/honey.jpg",
   },
   {
-    _id: 'prod-5',
-    name: 'Organic Gari',
+    _id: "prod-5",
+    name: "Organic Gari",
     price: 15,
-    description: 'Delicious crispy gari.',
-    category: 'Food',
+    description: "Delicious crispy gari.",
+    category: "Food",
     stock: 10,
-    image: '/images/gari.jpg',
+    image: "/images/gari.jpg",
   },
   {
-    _id: 'prod-6',
-    name: 'Unique Scarf',
+    _id: "prod-6",
+    name: "Unique Scarf",
     price: 15,
-    description: 'Elegant unique scarf.',
-    category: 'Clothing',
+    description: "Elegant unique scarf.",
+    category: "Clothing",
     stock: 10,
-    image: '/images/scarf.jpg',
+    image: "/images/scarf.jpg",
   },
   {
-    _id: 'prod-7',
-    name: 'Breaded Bracelet',
+    _id: "prod-7",
+    name: "Breaded Bracelet",
     price: 15,
-    description: 'GosticHandmade unique collection.',
-    category: 'Handmade',
+    description: "GosticHandmade unique collection.",
+    category: "Handmade",
     stock: 10,
-    image: '/images/bracelet.jpg',
+    image: "/images/assorted-design.jpg",
+  },
+
+  {
+    _id: "prod-8",
+    name: "Lawoe Peanut",
+    price: 15,
+    description: "Un savoir faire.",
+    category: "Food",
+    stock: 10,
+    image: "/images/lawoe-peanut.jpg",
   },
 ];
 
@@ -353,17 +56,20 @@ const Home = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.heading}>Welcome to Our Zirayco Store</h1>
+
+      <p style={styles.subheading}>
+         Click below to browse the full store.
+      </p>
+
       <div style={styles.grid}>
         {sampleProducts.map((product) => (
           <div key={product._id} style={styles.card}>
             <img src={product.image} alt={product.name} style={styles.image} />
-            <h3>{product.name}</h3>
-            <p>${product.price.toFixed(2)}</p>
-            <button
-              style={styles.button}
-              onClick={() => navigate(`/products/${product._id}`)}
-            >
-              View Product
+            <h3 style={styles.title}>{product.name}</h3>
+            <p style={styles.price}>${product.price.toFixed(2)}</p>
+
+            <button style={styles.button} onClick={() => navigate("/products")}>
+              Browse Products
             </button>
           </div>
         ))}
@@ -373,42 +79,176 @@ const Home = () => {
 };
 
 const styles = {
-  container: {
-    padding: '2rem',
-    textAlign: 'center',
-  },
-  heading: {
-    marginBottom: '2rem',
-    fontSize: '2rem',
-  },
+  container: { padding: "2rem", textAlign: "center" },
+  heading: { marginBottom: "0.5rem", fontSize: "2rem" },
+  subheading: { marginBottom: "2rem", color: "#555" },
   grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    gap: '1.5rem',
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+    gap: "1.5rem",
   },
   card: {
-    border: '1px solid #ddd',
-    borderRadius: '10px',
-    padding: '1rem',
-    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+    border: "1px solid #ddd",
+    borderRadius: "10px",
+    padding: "1rem",
+    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
   },
   image: {
-    width: '100%',
-    height: '150px',
-    objectFit: 'cover',
-    borderRadius: '8px',
+    width: "100%",
+    height: "150px",
+    objectFit: "cover",
+    borderRadius: "8px",
   },
+  title: { margin: "0.75rem 0 0.25rem" },
+  price: { margin: 0 },
   button: {
-    marginTop: '1rem',
-    padding: '0.5rem 1rem',
-    background: '#0070f3',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
+    marginTop: "1rem",
+    padding: "0.5rem 1rem",
+    background: "#0070f3",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+};
+
+export default Home;*/
+
+
+
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+//import { getImageSrc } from "../utils/image";
+
+
+
+const Home = () => {
+  const navigate = useNavigate();
+  const [featured, setFeatured] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFeatured = async () => {
+      try {
+        setLoading(true);
+
+        const res = await axios.get("/api/products");
+        const data = Array.isArray(res.data) ? res.data : res.data.products || [];
+
+        setFeatured(data.slice(0, 4));
+      } catch (err) {
+        console.error("❌ Failed to fetch featured products:", err);
+        setFeatured([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeatured();
+  }, []);
+
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.heading}>Welcome to Our Zirayco Store</h1>
+
+      {loading ? (
+        <p>Loading featured products...</p>
+      ) : (
+        <div style={styles.grid}>
+          {featured.map((product) => (
+            <div key={product._id} style={styles.card}>
+              <img
+                src={product.image || "/images/placeholder.jpg"}
+                alt={product.name}
+                style={styles.image}
+                onError={(e) => {
+                  e.currentTarget.src = "/images/placeholder.jpg";
+                }}
+              />
+
+             {/* <img
+                    src={getImageSrc(product.image)}
+                   alt={product.name}
+                   style={styles.image}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                 e.currentTarget.src = "/images/placeholder.jpg";
+              }}
+          />*/}
+
+              <h3 style={styles.title}>{product.name}</h3>
+              <p style={styles.price}>${Number(product.price).toFixed(2)}</p>
+
+              <button
+                style={styles.button}
+                onClick={() => navigate(`/products/${product._id}`)}
+              >
+                View Product
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {!loading && featured.length === 0 && (
+        <p style={{ color: "#666" }}>No featured products found.</p>
+      )}
+
+      <div style={{ marginTop: "2rem" }}>
+        <button style={styles.secondaryButton} onClick={() => navigate("/products")}>
+          View All Products
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const styles = {
+  container: { padding: "2rem", textAlign: "center" },
+  heading: { marginBottom: "2rem", fontSize: "2rem" },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+    gap: "1.5rem",
+  },
+  card: {
+    border: "1px solid #ddd",
+    borderRadius: "10px",
+    padding: "1rem",
+    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+  },
+  image: {
+    width: "100%",
+    height: "150px",
+    objectFit: "cover",
+    borderRadius: "8px",
+  },
+  title: { marginTop: "0.75rem", marginBottom: "0.25rem" },
+  price: { margin: 0 },
+  button: {
+    marginTop: "1rem",
+    padding: "0.5rem 1rem",
+    background: "#0070f3",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  secondaryButton: {
+    padding: "0.6rem 1.2rem",
+    background: "#111",
+    color: "#fff",
+    border: "none",
+    borderRadius: "6px",
+    cursor: "pointer",
   },
 };
 
 export default Home;
+
+
+
 
 
